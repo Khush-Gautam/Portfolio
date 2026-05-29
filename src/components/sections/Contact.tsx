@@ -1,6 +1,5 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { EarthCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
@@ -8,114 +7,92 @@ import { slideIn } from "../../utils/motion";
 import { config } from "../../constants/config";
 import { Header } from "../atoms/Header";
 
-const INITIAL_STATE = Object.fromEntries(
-  Object.keys(config.contact.form).map((input) => [input, ""])
-);
-
-const emailjsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  accessToken: import.meta.env.VITE_EMAILJS_ACCESS_TOKEN,
-};
-
 const Contact = () => {
-  const formRef = useRef<React.LegacyRef<HTMLFormElement> | undefined>();
-  const [form, setForm] = useState(INITIAL_STATE);
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | undefined
-  ) => {
-    if (e === undefined) return;
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement> | undefined) => {
-    if (e === undefined) return;
-    e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        {
-          form_name: form.name,
-          to_name: config.html.fullName,
-          from_email: form.email,
-          to_email: config.html.email,
-          message: form.message,
-        },
-        emailjsConfig.accessToken
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm(INITIAL_STATE);
-        },
-        (error) => {
-          setLoading(false);
-
-          console.log(error);
-          alert("Something went wrong.");
-        }
-      );
-  };
-
   return (
-    <div
-      className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row`}
-    >
+    <div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
+
+      {/* LEFT SIDE - CONTACT LINKS */}
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="bg-black-100 flex-[0.75] rounded-2xl p-8"
       >
         <Header useMotion={false} {...config.contact} />
 
-        <form
-          // @ts-expect-error
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
-        >
-          {Object.keys(config.contact.form).map((input) => {
-            const { span, placeholder } =
-              config.contact.form[input as keyof typeof config.contact.form];
-            const Component = input === "message" ? "textarea" : "input";
+        <p className="text-secondary mt-6 text-[16px] leading-[28px]">
+          Feel free to connect with me across platforms. I’m always open to
+          internships, collaborations, hackathons, and startup ideas 🚀
+        </p>
 
-            return (
-              <label key={input} className="flex flex-col">
-                <span className="mb-4 font-medium text-white">{span}</span>
-                <Component
-                  type={input === "email" ? "email" : "text"}
-                  name={input}
-                  value={form[`${input}`]}
-                  onChange={handleChange}
-                  placeholder={placeholder}
-                  className="bg-tertiary placeholder:text-secondary rounded-lg border-none px-6 py-4 font-medium text-white outline-none"
-                  {...(input === "message" && { rows: 7 })}
-                />
-              </label>
-            );
-          })}
-          <button
-            type="submit"
-            className="bg-tertiary shadow-primary w-fit rounded-xl px-8 py-3 font-bold text-white shadow-md outline-none"
+        <div className="mt-10 flex flex-col gap-6 text-white text-[16px]">
+
+          {/* EMAIL */}
+          <a
+            href="mailto:khushgautam18@gmail.com"
+            className="hover:text-[#915EFF] transition"
           >
-            {loading ? "Sending..." : "Send"}
-          </button>
-        </form>
+            📧 Email: khushgautam18@gmail.com
+          </a>
+
+          {/* GITHUB */}
+          <a
+            href="https://github.com/Khush-Gautam"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-[#915EFF] transition"
+          >
+            💻 GitHub: github.com/Khush-Gautam
+          </a>
+
+          {/* LINKEDIN */}
+          <a
+            href="https://www.linkedin.com/in/khush-gautam-a80488303/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-[#915EFF] transition"
+          >
+            🔗 LinkedIn Profile
+          </a>
+
+          {/* INSTAGRAM */}
+          <a
+            href="https://www.instagram.com/khush__gautam/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-[#915EFF] transition"
+          >
+            📸 Instagram
+          </a>
+
+          {/* LEETCODE */}
+          <a
+            href="https://leetcode.com/u/Khush_Gautam/"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-[#915EFF] transition"
+          >
+            🧠 LeetCode Profile
+          </a>
+        </div>
+
+        {/* EXTRA HIGHLIGHT BOX */}
+        <div className="mt-10 rounded-xl border border-white/10 bg-tertiary p-5">
+          <p className="text-white font-semibold">
+            🚀 Open for internships & hackathons
+          </p>
+          <p className="text-secondary text-sm mt-2">
+            Frontend Development • React • Startup Projects • Leadership Roles
+          </p>
+        </div>
       </motion.div>
 
+      {/* RIGHT SIDE - EARTH (UNCHANGED) */}
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="h-[350px] md:h-[550px] xl:h-auto xl:flex-1"
       >
         <EarthCanvas />
       </motion.div>
+
     </div>
   );
 };

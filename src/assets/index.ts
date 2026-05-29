@@ -30,6 +30,10 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import frontenduiproject from "./frontend-ui-project.png";
+import gameverse from "./gameverse.png";
+import cards from "./cards.png";
+
 export {
   logo,
   backend,
@@ -59,4 +63,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  frontenduiproject,
+  gameverse,
+  cards,
 };

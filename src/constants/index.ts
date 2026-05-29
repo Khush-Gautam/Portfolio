@@ -1,9 +1,9 @@
+
 import type {
   TNavLink,
   TService,
   TTechnology,
   TExperience,
-  TTestimonial,
   TProject,
 } from "../types";
 
@@ -13,25 +13,20 @@ import {
   creator,
   web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
-  nodejs,
   mongodb,
   git,
   figma,
-  docker,
   meta,
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
+  frontenduiproject,
+  gameverse,
+  cards,
 } from "../assets";
 
 export const navLinks: TNavLink[] = [
@@ -51,20 +46,20 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: "Web Developer",
+    title: "Frontend Developer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "React Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "UI/UX Enthusiast",
+    icon: creator,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Marketing & Leadership",
+    icon: backend,
   },
 ];
 
@@ -82,193 +77,129 @@ const technologies: TTechnology[] = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
     name: "React JS",
     icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
     name: "MongoDB",
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
+    name: "Figma",
     icon: figma,
   },
   {
-    name: "docker",
-    icon: docker,
+    name: "Git",
+    icon: git,
   },
 ];
 
 const experiences: TExperience[] = [
   {
-    title: "React.js Developer",
-    companyName: "Starbucks",
-    icon: starbucks,
+    title: "Campus Ambassador",
+    companyName: "Paytm",
+    icon: web,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "2026 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Worked with the marketing and outreach team for campus campaigns.",
+      "Recognized as a top performer and received official goodies.",
+      "Built strong communication, networking and leadership skills.",
+      "Promoted student engagement and brand awareness initiatives.",
     ],
   },
+
   {
-    title: "React Native Developer",
-    companyName: "Tesla",
-    icon: tesla,
+    title: "Campus Ambassador",
+    companyName: "EDC IIT Delhi",
+    icon: creator,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Represented EDC IIT Delhi in campus entrepreneurship initiatives.",
+      "Collaborated with students and startup communities.",
+      "Participated in innovation and startup-oriented events.",
+      "Developed networking and management experience.",
     ],
   },
+
   {
-    title: "Web Developer",
-    companyName: "Shopify",
-    icon: shopify,
+    title: "Hackathon Team Lead",
+    companyName: "SIH & Hackathons",
+    icon: reactjs,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Led teams in SIH, Visual Vortex and DCode hackathons.",
+      "Cleared the internal round of Smart India Hackathon (SIH).",
+      "Secured 2nd place in the Visual Vortex Hackathon.",
+      "Managed team coordination, presentations and technical planning.",
     ],
   },
+
   {
-    title: "Full stack Developer",
-    companyName: "Meta",
-    icon: meta,
+    title: "Freelancer & Community Member",
+    companyName: "E-Cell & Freelancing",
+    icon: git,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Worked on frontend and UI-focused freelance projects.",
+      "Active member of entrepreneurship and innovation communities.",
+      "Participated in EDC IIT Delhi Startup Clinic as team leader.",
+      "Built collaboration, leadership and client communication skills.",
     ],
   },
 ];
 
-const testimonials: TTestimonial[] = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
+
 
 const projects: TProject[] = [
   {
-    name: "Car Rent",
+    name: "Frontend UI Project",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A modern React and Tailwind CSS frontend website featuring employee cards, horizontal scrolling sections, responsive layouts and reusable UI components. Focused on mastering real-world frontend architecture and UI design patterns.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "tailwind", color: "green-text-gradient" },
+      { name: "ui-design", color: "pink-text-gradient" },
     ],
-    image: carrent,
-    sourceCodeLink: "https://github.com/",
+    image: frontenduiproject,
+    sourceCodeLink: "https://github.com/Khush-Gautam/frontend-ui-project",
+    liveLink: "https://frontend-ui-project-navy.vercel.app/",
   },
+
   {
-    name: "Job IT",
+    name: "GameVerse",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A web application for exploring free-to-play online games using real-time API integration. Includes filtering, sorting, and dynamic rendering with a clean responsive UI built using vanilla web technologies.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: "javascript", color: "blue-text-gradient" },
+      { name: "api", color: "green-text-gradient" },
+      { name: "responsive-ui", color: "pink-text-gradient" },
     ],
-    image: jobit,
-    sourceCodeLink: "https://github.com/",
+    image: gameverse,
+    sourceCodeLink: "https://github.com/Khush-Gautam/gameverse",
+    liveLink: "https://khush-gautam.github.io/gameverse/",
   },
+
   {
-    name: "Trip Guide",
+    name: "React Job Cards Project",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A React-based job listing UI displaying company job cards using reusable props and component-based architecture. Focused on clean UI, reusability, and frontend best practices.",
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "props", color: "green-text-gradient" },
+      { name: "frontend", color: "pink-text-gradient" },
     ],
-    image: tripguide,
-    sourceCodeLink: "https://github.com/",
+    image: cards,
+    sourceCodeLink:
+      "https://github.com/Khush-Gautam/react-job-cards-project",
+    liveLink: "https://react-job-cards-project.vercel.app/",
   },
 ];
-
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
